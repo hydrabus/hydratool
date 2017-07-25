@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>hydratooldialog</class>
+ <widget class="QDialog" name="hydratooldialog">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>837</width>
+    <height>546</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>HydraNFC sniff</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="1" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="3">
+       <widget class="QComboBox" name="findPredefBox">
+        <property name="toolTip">
+         <string>Find Predefined RegExp</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>History depth:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="8">
+       <widget class="QPushButton" name="saveDirectToDisk">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>Save DirectToDisk</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7">
+       <widget class="QPushButton" name="saveFile">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QLineEdit" name="historyDepthLines">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Max nb lines (0 unlimited)
+press Enter to apply</string>
+        </property>
+        <property name="inputMask">
+         <string/>
+        </property>
+        <property name="text">
+         <string>100000</string>
+        </property>
+        <property name="maxLength">
+         <number>7</number>
+        </property>
+        <property name="placeholderText">
+         <string>Max nb lines</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="findValue">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Press 'return' to apply</string>
+        </property>
+        <property name="placeholderText">
+         <string>Type RegEx text to find and press 'return' to apply</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="6">
+       <widget class="QPushButton" name="loadFile">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Find RegEx:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QCheckBox" name="findLiveRefreshCheckBox">
+        <property name="toolTip">
+         <string>Live find refresh</string>
+        </property>
+        <property name="text">
+         <string>Live</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="Console" name="console">
+     <property name="font">
+      <font>
+       <family>Courier New</family>
+      </font>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QStatusBar" name="statusBar">
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>8</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="sizeGripEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLabel" name="label_com">
+     <property name="minimumSize">
+      <size>
+       <width>80</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>120</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QToolBar" name="mainToolBar">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>100</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="locale">
+      <locale language="English" country="UnitedStates"/>
+     </property>
+     <property name="allowedAreas">
+      <set>Qt::NoToolBarArea</set>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonIconOnly</enum>
+     </property>
+     <property name="floatable">
+      <bool>false</bool>
+     </property>
+     <addaction name="actionConnect"/>
+     <addaction name="actionResync"/>
+     <addaction name="actionConfigure"/>
+     <addaction name="actionClear"/>
+     <addaction name="separator"/>
+     <addaction name="actionChanTerminal"/>
+     <addaction name="separator"/>
+     <addaction name="actionRaw"/>
+     <addaction name="separator"/>
+     <addaction name="actionPCdateTime"/>
+     <addaction name="separator"/>
+     <addaction name="actionAscii"/>
+     <addaction name="separator"/>
+     <addaction name="actionHex"/>
+     <addaction name="actionAutoScroll"/>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label_title">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <action name="actionConnect">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="hydratool.qrc">
+     <normaloff>:/images/disconnect.png</normaloff>
+     <normalon>:/images/connect.png</normalon>:/images/disconnect.png</iconset>
+   </property>
+   <property name="text">
+    <string>ConnectDiconnect</string>
+   </property>
+   <property name="toolTip">
+    <string>Connect/Disconnect to serial port</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+O</string>
+   </property>
+  </action>
+  <action name="actionConfigure">
+   <property name="icon">
+    <iconset resource="hydratool.qrc">
+     <normaloff>:/images/settings.png</normaloff>:/images/settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Configure</string>
+   </property>
+   <property name="toolTip">
+    <string>Configure serial port</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+C</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset resource="hydratool.qrc">
+     <normaloff>:/images/clear.png</normaloff>:/images/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>C&amp;lear</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear display</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+L</string>
+   </property>
+  </action>
+  <action name="actionHex">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Hex</string>
+   </property>
+  </action>
+  <action name="actionAutoScroll">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>AutoScroll</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionAscii">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Ascii</string>
+   </property>
+  </action>
+  <action name="actionRaw">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Raw</string>
+   </property>
+  </action>
+  <action name="actionPCdateTime">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>DateTime</string>
+   </property>
+   <property name="toolTip">
+    <string>PC Date Time and ms</string>
+   </property>
+  </action>
+  <action name="actionChanTerminal">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="hydratool.qrc">
+     <normaloff>:/images/terminal.png</normaloff>:/images/terminal.png</iconset>
+   </property>
+   <property name="text">
+    <string>2nd Terminal</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionResync">
+   <property name="icon">
+    <iconset resource="hydratool.qrc">
+     <normaloff>:/images/view-recheck.png</normaloff>:/images/view-recheck.png</iconset>
+   </property>
+   <property name="text">
+    <string>Resync</string>
+   </property>
+   <property name="toolTip">
+    <string>Resync serial port</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+R</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Console</class>
+   <extends>QPlainTextEdit</extends>
+   <header>console.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>findValue</tabstop>
+  <tabstop>findLiveRefreshCheckBox</tabstop>
+  <tabstop>findPredefBox</tabstop>
+  <tabstop>historyDepthLines</tabstop>
+  <tabstop>loadFile</tabstop>
+  <tabstop>saveFile</tabstop>
+  <tabstop>saveDirectToDisk</tabstop>
+  <tabstop>console</tabstop>
+ </tabstops>
+ <resources>
+  <include location="hydratool.qrc"/>
+ </resources>
+ <connections/>
+</ui>

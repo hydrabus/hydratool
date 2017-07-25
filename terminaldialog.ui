@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TerminalDialog</class>
+ <widget class="QDialog" name="TerminalDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>530</width>
+    <height>597</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0" colspan="2">
+    <widget class="Console" name="console"/>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="1">
+       <widget class="QToolButton" name="ConfigureButton">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="hydratool.qrc">
+          <normaloff>:/images/settings.png</normaloff>:/images/settings.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="11">
+       <widget class="HistoryLineEdit" name="lineEdit">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Use Up / Down for history</string>
+        </property>
+        <property name="statusTip">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Type text (support \n, \r, \t, \x ...) and press 'return' to apply</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QToolButton" name="actionConnect">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="hydratool.qrc">
+          <normaloff>:/images/disconnect.png</normaloff>
+          <normalon>:/images/connect.png</normalon>
+          <disabledoff>:/images/disconnect.png</disabledoff>
+          <activeoff>:/images/connect.png</activeoff>
+          <activeon>:/images/disconnect.png</activeon>:/images/disconnect.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonIconOnly</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QCheckBox" name="checkBoxPCdateTime">
+        <property name="toolTip">
+         <string>PC Date Time and ms</string>
+        </property>
+        <property name="text">
+         <string>DateTime</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QCheckBox" name="checkBox_CR">
+        <property name="maximumSize">
+         <size>
+          <width>40</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>CR</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QCheckBox" name="checkBox_LF">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>40</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>LF</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="8">
+       <widget class="QPushButton" name="saveButton">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="7">
+       <widget class="QPushButton" name="clearButton">
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Clear</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="hydratool.qrc">
+          <normaloff>:/images/clear.png</normaloff>:/images/clear.png</iconset>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="9">
+       <widget class="QPushButton" name="saveDirectToDisk">
+        <property name="text">
+         <string>Save DirectToDisk</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="5">
+       <widget class="QCheckBox" name="checkBoxHexAsc">
+        <property name="toolTip">
+         <string>Display data as Hex &amp; Ascii</string>
+        </property>
+        <property name="text">
+         <string>HexAsc</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="6">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="statusBar">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="label_com">
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Console</class>
+   <extends>QPlainTextEdit</extends>
+   <header>console.h</header>
+  </customwidget>
+  <customwidget>
+   <class>HistoryLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>history_line_edit.hpp</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>console</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>actionConnect</tabstop>
+  <tabstop>ConfigureButton</tabstop>
+  <tabstop>checkBox_CR</tabstop>
+  <tabstop>checkBox_LF</tabstop>
+  <tabstop>checkBoxPCdateTime</tabstop>
+  <tabstop>checkBoxHexAsc</tabstop>
+  <tabstop>clearButton</tabstop>
+  <tabstop>saveButton</tabstop>
+  <tabstop>saveDirectToDisk</tabstop>
+ </tabstops>
+ <resources>
+  <include location="hydratool.qrc"/>
+ </resources>
+ <connections/>
+</ui>

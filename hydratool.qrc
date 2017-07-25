@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/fonts">
+        <file>LiberationSans-Regular.ttf</file>
+    </qresource>
+    <qresource prefix="/qt/etc">
+        <file>qt.conf</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>images/application-exit.png</file>
+        <file>images/clear.png</file>
+        <file>images/connect.png</file>
+        <file>images/disconnect.png</file>
+        <file>images/settings.png</file>
+        <file>images/view-recheck.png</file>
+        <file>images/find.png</file>
+        <file>images/terminal.png</file>
+        <file>images/window-new.png</file>
+    </qresource>
+</RCC>
