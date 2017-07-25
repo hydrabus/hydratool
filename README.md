@@ -9,6 +9,8 @@ HydraBus: https://www.hydrabus.com & https://github.com/hydrabus
 
 HydraFW: https://github.com/hydrabus/hydrafw
 
+For more details on HydraTool see the [HydraTool Wiki](https://github.com/hydrabus/hydratool/wiki)
+
 ## How to build host software on Windows, GNU/LINUX:
 
 ### Prerequisites Windows, GNU/Linux:
