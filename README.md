@@ -16,7 +16,7 @@ HydraFW: https://github.com/hydrabus/hydrafw
 * Qt5.6.x or more (with QtCreator)
  * See Qt5.x Online Installer http://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe
  * See also http://download.qt.io/official_releases/qt/
- * Tested with success on Qt5.6 & Qt5.9.1 on Ubuntu 16 LTS & Windows7 SP1
+ * Tested with success on Qt5.6 & Qt5.9.1 (using Qt Static Build) on Ubuntu 16.x LTS & Windows7 SP1(MSVC2013)
 
 ### Build the project with QtCreator on Windows, GNU/Linux:
 
