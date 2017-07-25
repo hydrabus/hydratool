@@ -23,7 +23,7 @@ For more details on HydraTool see the [HydraTool Wiki](https://github.com/hydrab
 ### Build the project with QtCreator on Windows, GNU/Linux:
 
 * Import hydratool.pro project in Qt Creator 
-* Configure the Project for MinGW and/or MSVC2013 or more
+* Configure the Project for GCC/MinGW/MSVC2013 ...
 * Build the project
 
 ## How to build Qt5.x as static build on Windows, GNU/LINUX:
