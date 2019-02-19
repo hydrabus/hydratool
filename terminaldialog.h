@@ -61,6 +61,8 @@ private slots:
 
     void on_checkBoxHexAsc_clicked(bool checked);
 
+    void on_sendFileButton_clicked();
+
 private:
     Ui::TerminalDialog *ui;
     SettingsDialog *settingsCom;
@@ -85,6 +87,7 @@ private:
     bool AutoScrollEnabled;
     bool itsOkToClose;
     bool HexAscii;
+    QString loadfile_path;
 
 private:
     void readSettings();

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>530</width>
+    <width>678</width>
     <height>597</height>
    </rect>
   </property>
@@ -49,7 +49,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="0" colspan="11">
+      <item row="0" column="0" colspan="13">
        <widget class="HistoryLineEdit" name="lineEdit">
         <property name="focusPolicy">
          <enum>Qt::StrongFocus</enum>
@@ -143,7 +143,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="8">
+      <item row="1" column="10">
        <widget class="QPushButton" name="saveButton">
         <property name="maximumSize">
          <size>
@@ -156,7 +156,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="7">
+      <item row="1" column="9">
        <widget class="QPushButton" name="clearButton">
         <property name="maximumSize">
          <size>
@@ -182,7 +182,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="9">
+      <item row="1" column="11">
        <widget class="QPushButton" name="saveDirectToDisk">
         <property name="text">
          <string>Save DirectToDisk</string>
@@ -199,7 +199,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="6">
+      <item row="1" column="8">
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -211,6 +211,41 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item row="1" column="7">
+       <widget class="QPushButton" name="sendFileButton">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>SendFile with n line(s) (EOL char is LF)</string>
+        </property>
+        <property name="text">
+         <string>SendFile</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="6">
+       <widget class="QSpinBox" name="SendFileSpinBox">
+        <property name="toolTip">
+         <string>SendFile Line Delay in ms (EOL char is LF)</string>
+        </property>
+        <property name="suffix">
+         <string comment="ms" extracomment="ms"/>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+        <property name="value">
+         <number>1</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>

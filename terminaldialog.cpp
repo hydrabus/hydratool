@@ -3,6 +3,7 @@
 #include "history_line_edit.hpp"
 
 #include <QMessageBox>
+#include <QFile>
 #include <QFileDialog>
 #include <QScrollBar>
 #include <QTextStream>
@@ -10,6 +11,7 @@
 #include <QtSerialPort>
 #include <QtSerialPort/QSerialPort>
 #include <QSettings>
+#include <QProgressDialog>
 
 #include "sniff/sniff.h"
 
@@ -796,4 +798,60 @@ void TerminalDialog::on_saveDirectToDisk_clicked()
 void TerminalDialog::on_checkBoxHexAsc_clicked(bool checked)
 {
     HexAscii = checked;
+}
+
+void TerminalDialog::on_sendFileButton_clicked()
+{
+    int line_delay_ms;
+    QString fileName;
+    QFile file;
+    QString text_data;
+    qint64 lineLength;
+    char text_buf[512+1];
+
+    line_delay_ms = ui->SendFileSpinBox->value();
+    if(this->loadfile_path.length() == 0)
+    {
+        this->loadfile_path = "./";
+    }
+
+    fileName = QFileDialog::getOpenFileName(this, "Select text file to send...", this->loadfile_path, "text files (*.txt);;All files (*.*)");
+    if(!fileName.length()) return;
+
+    this->loadfile_path = QFileInfo(fileName).path(); // store path for next time
+
+    file.setFileName(fileName);
+    file.open(QIODevice::ReadOnly);
+
+    if(QFileInfo(fileName).suffix().toLower() == "txt")
+    {
+        QProgressDialog progress("SendFile in progress...", "Cancel", 0, 0, this);
+        progress.setWindowModality(Qt::WindowModal);
+        progress.setRange(0,0);
+        progress.setMinimumDuration(0);
+        progress.show();
+
+        while(1)
+        {
+            lineLength = file.readLine(text_buf, 512);
+            if (lineLength != -1)
+            {
+                // the line is available in buf
+                text_data = text_buf;
+                txData(text_data);
+                qApp->processEvents(QEventLoop::AllEvents, 1);
+                QThread::msleep(line_delay_ms - 1);
+
+                if (progress.wasCanceled())
+                {
+                    break;
+                }
+            }else
+            {
+                break; /* End Of File */
+            }
+        }
+        progress.cancel();
+    }
+    file.close();
 }

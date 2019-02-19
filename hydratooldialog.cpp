@@ -652,14 +652,36 @@ void hydratooldialog::sniff_trace(QIODevice* stream, int decode_nb_frames)
 
                 if(is_frame_contains_binary_data(&sniff_frame) == 1)
                 {
-                    /* Print Data as Hex Text */
-                    t_ascii_hex val_ascii;
-                    for (int i = 0; i < data_size; i++)
+                    if(sniff_frame.protocol_options & PROTOCOL_OPTIONS_PARITY)
                     {
-                        val_ascii = BinHextoAscii(sniff_frame.data[i]);
-                        qb_data.append(val_ascii.msb);
-                        qb_data.append(val_ascii.lsb);
-                        qb_data.append(' ');
+                        /* Print Data as Hex Text */
+                        t_ascii_hex val_ascii;
+                        for (int i = 0; i < data_size; i++)
+                        {
+                            if(i > 0 && ((i+1)%2 == 0)) /* Display Parity Byte like Proxmark3 */
+                            {
+                                if(sniff_frame.data[i] == 0)
+                                    qb_data.append("  ");
+                                else
+                                    qb_data.append("! ");
+                            }else
+                            {
+                                val_ascii = BinHextoAscii(sniff_frame.data[i]);
+                                qb_data.append(val_ascii.msb);
+                                qb_data.append(val_ascii.lsb);
+                            }
+                        }
+                    }else
+                    {
+                        /* Print Data as Hex Text */
+                        t_ascii_hex val_ascii;
+                        for (int i = 0; i < data_size; i++)
+                        {
+                            val_ascii = BinHextoAscii(sniff_frame.data[i]);
+                            qb_data.append(val_ascii.msb);
+                            qb_data.append(val_ascii.lsb);
+                            qb_data.append(' ');
+                        }
                     }
                 }else
                 {
