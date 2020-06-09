@@ -31,7 +31,7 @@ static t_u32 bin_to_ascii_hex(t_u8* in_buffer, t_u16 in_buffer_size, t_u8* out_b
 		pt_dst += 3;
 	}
 
-	return (pt_dst - out_buffer);
+    return ((t_u32)(pt_dst - out_buffer));
 }
 
 static t_u32 bin_to_ascii_txt(t_u8* in_buffer, t_u16 in_buffer_size, t_u8* out_buffer)
@@ -51,7 +51,7 @@ static t_u32 bin_to_ascii_txt(t_u8* in_buffer, t_u16 in_buffer_size, t_u8* out_b
 		pt_dst++;
 	}
 
-	return (pt_dst - out_buffer);
+    return ((t_u32)(pt_dst - out_buffer));
 }
 
 void sniff_frame_print_ascii(FILE* out_file, t_sniff_frame* in_frame)
