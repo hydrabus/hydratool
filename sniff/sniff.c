@@ -151,7 +151,7 @@ t_sniff_frame_state sniff_frame_header_decode(const t_u8 in_len_u8[SNIFF_FRAME_H
 
 	/* Error corrupted frame */
     if( (in_out_frame->data_size < SNIFF_FRAME_HEADER_DECODE_NB_BYTES) ||
-        (in_out_frame->data_size >= 255)
+        (in_out_frame->data_size >= 4096)
 		)
 	{
         /* Error resync => init */
