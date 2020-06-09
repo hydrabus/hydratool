@@ -2,6 +2,9 @@
     <qresource prefix="/fonts">
         <file>LiberationSans-Regular.ttf</file>
     </qresource>
+    <qresource prefix="/qt/etc">
+        <file>qt.conf</file>
+    </qresource>
     <qresource prefix="/">
         <file>images/application-exit.png</file>
         <file>images/clear.png</file>
