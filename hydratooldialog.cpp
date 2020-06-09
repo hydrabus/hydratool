@@ -59,7 +59,7 @@ hydratooldialog::hydratooldialog(QWidget *parent,
 
     on_historyDepthLines_returnPressed();
 
-    ui->label_title->setText("HydraNFC real-time sniffer <a href=\"https://github.com/hydrabus/hydrafw/wiki/HydraFW-HydraNFC-guide#sniffer-iso14443a-with-unique-hard-real-time-infinite-trace-mode\">HW Setup Link</a>");
+    ui->label_title->setText("HydraNFC real-time sniffer <a href=\"https://github.com/hydrabus/hydrafw/wiki/HydraFW-HydraNFC-v1-guide#sniffer-iso14443a-with-unique-hard-real-time-infinite-trace-mode\">HW Setup Link</a>");
     ui->label_title->setTextFormat(Qt::RichText);
     ui->label_title->setTextInteractionFlags(Qt::TextBrowserInteraction);
     ui->label_title->setOpenExternalLinks(true);
