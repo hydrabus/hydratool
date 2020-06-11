@@ -9,7 +9,7 @@
 
 #include <QPlainTextEdit>
 #include <QObject>
-#include <QTime>
+#include <QElapsedTimer>
 
 QT_BEGIN_NAMESPACE
 class QPaintEvent;
@@ -39,10 +39,10 @@ public:
     int lineNumberAreaWidth();
 
 protected:
-    virtual void keyPressEvent(QKeyEvent *e);
-    virtual void mousePressEvent(QMouseEvent *e);
-    virtual void mouseDoubleClickEvent(QMouseEvent *e);
-    virtual void contextMenuEvent(QContextMenuEvent *e);
+    virtual void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    virtual void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    virtual void mouseDoubleClickEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    virtual void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
 
     void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 
@@ -55,7 +55,7 @@ private:
     bool localEchoEnabled;
     bool localVerticalAutoScrollEnabled;
     QWidget *lineNumberArea;
-    QTime t;
+    QElapsedTimer t;
 };
 
 class LineNumberArea : public QWidget
